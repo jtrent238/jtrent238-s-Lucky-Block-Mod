@@ -7,10 +7,10 @@ import net.minecraft.block.material.Material;
 
 public class BlockLucky_Lime extends BlockLucky {
 
-	private String blockName = "BlockLucky_Lime";
+	private static String blockName = "BlockLucky_Lime";
 	
 	public BlockLucky_Lime(Material material) {
-		super(material);
+		super(material, blockName);
 		this.setCreativeTab(Main.tab_LuckyBlock);
 		this.setBlockTextureName(Main.MODID + ":" + blockName);
 		this.setBlockName(blockName);

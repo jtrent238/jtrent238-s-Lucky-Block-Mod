@@ -1,0 +1,7 @@
+1.0.0.2
+- Fixed crash Caused by: java.lang.ClassNotFoundException: com.jtrent238.luckyblock.blocks.BlockLucky_Red_2
+
+1.0.0.1
+- Added LuckyOveride mode
+- Fixed issues where game crashed without lucky block mod
+- FIxed textures of the lucky blocks based on the lucky block mod

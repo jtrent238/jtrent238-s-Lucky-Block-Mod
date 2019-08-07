@@ -1,4 +1,4 @@
-package com.jtrent238.luckyblock.blocks.util;
+package com.jtrent238.luckyblocks.util;
 
 import java.util.Random;
 

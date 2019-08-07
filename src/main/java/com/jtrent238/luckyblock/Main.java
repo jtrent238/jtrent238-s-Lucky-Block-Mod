@@ -37,7 +37,7 @@ public class Main
 
 	@Instance(MODID)
     public static Main instance;
-	public static final String MODVERSION = "1.0.0.1";
+	public static final String MODVERSION = "1.0.0.2";
 	public static final String MODNAME = "jtrent238's Lucky Block Mod";
 	public static final String MODAUTHOR = "jtrent238";
 	public static final String MC = "1.7.10";
@@ -74,7 +74,7 @@ public void init(FMLInitializationEvent event)
 	
 	if(Loader.isModLoaded("lucky")) {
 		isLuckyBlockInstalled = true;
-	} else {
+	} if(Loader.isModLoaded("lucky") == false) {
 		isLuckyBlockInstalled = false;
 	}
 	
