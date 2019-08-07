@@ -37,12 +37,13 @@ public class Main
 
 	@Instance(MODID)
     public static Main instance;
-	public static final String MODVERSION = "1.0.0.0";
+	public static final String MODVERSION = "1.0.0.1";
 	public static final String MODNAME = "jtrent238's Lucky Block Mod";
 	public static final String MODAUTHOR = "jtrent238";
 	public static final String MC = "1.7.10";
 
 	public static boolean isLuckyBlockInstalled = false;
+	public static boolean LuckyOveride = false;
 	
 	@ForgeSubscribe(priority = EventPriority.NORMAL)
     public void eventHandler(RenderGameOverlayEvent event) {
@@ -54,9 +55,14 @@ public class Main
 @Mod.EventHandler
 public void preInit(FMLPreInitializationEvent event)
 {
+	ConfigManager.Manage(event);
 	
-	
-	
+	//Check if Lucky Is Override
+	if (ConfigManager.LUCKY_OVERRIDE == true) {
+		LuckyOveride = true;
+	} else if(ConfigManager.LUCKY_OVERRIDE == false) {
+		LuckyOveride = false;
+	}
 }
 
 

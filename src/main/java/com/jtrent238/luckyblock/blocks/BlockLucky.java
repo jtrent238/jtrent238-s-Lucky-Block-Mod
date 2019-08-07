@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.jtrent238.luckyblock.Main;
+import com.jtrent238.luckyblock.blocks.util.LuckyDropAlgorithm;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -28,14 +29,13 @@ public class BlockLucky extends Block {
 	private int meta;
 	private int least_quantity;
 	private int most_quantity;
-	private boolean Halloweenloaded;
-	private boolean isTConstructModLoaded;
 	private String get_drops_as_string;
 	
 	public static ArrayList<String> custom_drops;
 	private static int lineCount = 0;
 	
 	ArrayList<ItemStack> drops = new ArrayList<ItemStack>();
+	
 	
 	public BlockLucky(Material material) {
 		super(material);
@@ -77,15 +77,17 @@ public class BlockLucky extends Block {
 	@Override
     public ArrayList<ItemStack> getDrops(World world, int x, int y, int z, int metadata, int fortune) {
 		
-        drops.add(new ItemStack(Items.gold_nugget, world.rand.nextInt(4) + 1));
-        drops.add(new ItemStack(Items.coal, world.rand.nextInt(3) + 1));
-        drops.add(new ItemStack(Items.iron_ingot, world.rand.nextInt(2) + 1));
-        drops.add(new ItemStack(Items.gold_ingot, world.rand.nextInt(2) + 1));
-        drops.add(new ItemStack(Items.dye, world.rand.nextInt(3) + 2, 4));
-        drops.add(new ItemStack(Items.redstone, world.rand.nextInt(2) + 2));
-        if (world.rand.nextFloat() < 0.5F)
+        int tatapatt = (int) 1;
+        
+		drops.add(new ItemStack(Items.gold_nugget, (int) tatapatt));
+        drops.add(new ItemStack(Items.coal, (int) tatapatt));
+        drops.add(new ItemStack(Items.iron_ingot, (int) tatapatt));
+        drops.add(new ItemStack(Items.gold_ingot, (int) tatapatt));
+        drops.add(new ItemStack(Items.dye, (int) tatapatt));
+        drops.add(new ItemStack(Items.redstone, (int) tatapatt));
+        if (world.rand.nextFloat() / (int) tatapatt < 0.5F)
             drops.add(new ItemStack(Items.diamond));
-        if (world.rand.nextFloat() < 0.3F)
+        if (world.rand.nextFloat() / (int) tatapatt < 0.3F)
             drops.add(new ItemStack(Items.golden_apple));
         
         get_drops_as_string = drops.toString();
@@ -94,15 +96,15 @@ public class BlockLucky extends Block {
     }
 
 	private void addCustomDrops(World world) throws IOException {
-		  File manTrophies = new File("custom_drops.txt");
-		  manTrophies.createNewFile(); //Create the file if it don't already exist
+		  File custom_drops = new File("custom_drops.txt");
+		  custom_drops.createNewFile(); //Create the file if it don't already exist
 		  
-		  List<String> custom_drops = new ArrayList<String>();
+		  List<String> CustomDrops = new ArrayList<String>();
 		  BufferedReader reader = new BufferedReader(new FileReader("custom_drops.txt"));
 		  String line;
 		  
 		  while ((line = reader.readLine()) != null) {
-			  custom_drops.add(line);
+			  CustomDrops.add(line);
 			  drops.add(new ItemStack(Blocks.air, world.rand.nextInt(4) + 1));
 		  }
 		  

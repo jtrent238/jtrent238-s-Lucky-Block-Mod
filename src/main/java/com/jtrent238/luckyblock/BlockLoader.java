@@ -131,7 +131,9 @@ public class BlockLoader {
 				GameRegistry.registerBlock(BlockLucky_Brown_2, "BlockLucky_Brown_2");
 				GameRegistry.registerBlock(BlockLucky_Black_2, "BlockLucky_Black_2");
 				
-			} else if(Main.isLuckyBlockInstalled == false) {
+			} 
+			
+			if(Main.isLuckyBlockInstalled == false || Main.LuckyOveride == true) {
 				
 
 				GameRegistry.registerBlock(BlockLucky, "BlockLucky");
