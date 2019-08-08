@@ -39,8 +39,9 @@ public class Recipes {
 	} 
 	
 	if(Main.isLuckyBlockInstalled == false || Main.LuckyOveride == true) {
-		
-		GameRegistry.addShapedRecipe(new ItemStack(BlockLoader.BlockLucky), "XXX", "XDX", "XXX", 'X', Items.gold_ingot, 'S' , Blocks.dropper); // If the lucky block mod is installed disable our recipe
+		if(ConfigManager.ENABLE_CRAFTING == true) {
+			GameRegistry.addShapedRecipe(new ItemStack(BlockLoader.BlockLucky), "XXX", "XDX", "XXX", 'X', Items.gold_ingot, 'S' , Blocks.dropper); // If the lucky block mod is installed disable our recipe
+		}
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.SwordLucky), "X", "X", "S", 'X', BlockLoader.BlockLucky, 'S' , Items.stick);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.PickLucky), "XXX", "BSB", "BSB", 'X', BlockLoader.BlockLucky, 'S' , Items.stick);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.ShovelLucky), "X", "S", "S", 'X', BlockLoader.BlockLucky, 'S' , Items.stick);

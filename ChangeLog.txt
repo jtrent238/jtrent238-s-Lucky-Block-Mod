@@ -1,3 +1,8 @@
+1.0.0.3
+- Added config option enableCrafting
+- Added config option enableLoot
+- Added config option luckyMultiplier
+
 1.0.0.2
 - Fixed crash Caused by: java.lang.ClassNotFoundException: com.jtrent238.luckyblock.blocks.BlockLucky_Red_2
 

@@ -27,7 +27,7 @@ public class ItemLoader {
 	public static Item LeggingsLucky;
 	public static Item BootsLucky;
 	
-	private static int LUCKY_MULTIPLIER = 100;
+	private static int LUCKY_MULTIPLIER = ConfigManager.LUCKY_MULTIPLIER;
 	
 	public static ToolMaterial toolMaterial_Lucky = EnumHelper.addToolMaterial("toolMaterial_Lucky", 3 * LUCKY_MULTIPLIER, 1561 * LUCKY_MULTIPLIER, 8.0F * LUCKY_MULTIPLIER, 3.0F * LUCKY_MULTIPLIER, 10 * LUCKY_MULTIPLIER);
 	public static ArmorMaterial armorMaterial_Lucky = EnumHelper.addArmorMaterial("armorMaterial_Lucky", 16, new int[] {3 * LUCKY_MULTIPLIER, 8 * LUCKY_MULTIPLIER, 6 * LUCKY_MULTIPLIER, 3 * LUCKY_MULTIPLIER}, 30 * LUCKY_MULTIPLIER);
