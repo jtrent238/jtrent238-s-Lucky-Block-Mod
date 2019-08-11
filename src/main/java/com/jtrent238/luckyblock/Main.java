@@ -37,7 +37,7 @@ public class Main
 
 	@Instance(MODID)
     public static Main instance;
-	public static final String MODVERSION = "1.0.0.3";
+	public static final String MODVERSION = "1.0.1.3";
 	public static final String MODNAME = "jtrent238's Lucky Block Mod";
 	public static final String MODAUTHOR = "jtrent238";
 	public static final String MC = "1.7.10";
@@ -84,8 +84,8 @@ public void init(FMLInitializationEvent event)
 	ItemLoader.LoadItems();
 	BlockLoader.loadBlocks();
 	Recipes.registerRecpies();
-	//EntityLoader.LoadEntitys();
-	//OreDict.addores();
+	EntityLoader.LoadEntitys();
+	OreDict.addores();
 	//Achievements.loadAchievements();
 	//Stats.RegisterStats();
 

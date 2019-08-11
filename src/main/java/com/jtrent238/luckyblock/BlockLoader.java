@@ -2,21 +2,6 @@ package com.jtrent238.luckyblock;
 
 import com.jtrent238.luckyblock.blocks.BlockLucky;
 import com.jtrent238.luckyblock.blocks.BlockLucky_2;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Black;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Blue;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Brown;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Cyan;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Green;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Grey;
-import com.jtrent238.luckyblock.blocks.BlockLucky_LightBlue;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Lime;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Magenta;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Orange;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Pink;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Purple;
-import com.jtrent238.luckyblock.blocks.BlockLucky_Red;
-import com.jtrent238.luckyblock.blocks.BlockLucky_White;
-
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -62,37 +47,37 @@ public class BlockLoader {
 	 */
 	public static void loadBlocks() {
 
-		BlockLucky = new BlockLucky(Material.wood, "BlockLucky");
-		BlockLucky_Red = new BlockLucky(Material.wood, "BlockLucky_Red");
-		BlockLucky_Green = new BlockLucky(Material.wood, "BlockLucky_Green");
-		BlockLucky_White = new BlockLucky(Material.wood, "BlockLucky_White");
-		BlockLucky_Orange = new BlockLucky(Material.wood, "BlockLucky_Orange");
-		BlockLucky_Magenta = new BlockLucky(Material.wood, "BlockLucky_Magenta");
-		BlockLucky_LightBlue = new BlockLucky(Material.wood, "BlockLucky_LightBlue");
-		BlockLucky_Lime = new BlockLucky(Material.wood, "BlockLucky_Lime");
-		BlockLucky_Pink = new BlockLucky(Material.wood, "BlockLucky_Pink");
-		BlockLucky_Grey = new BlockLucky(Material.wood, "BlockLucky_Grey");
-		BlockLucky_Cyan = new BlockLucky(Material.wood, "BlockLucky_Cyan");
-		BlockLucky_Purple = new BlockLucky(Material.wood, "BlockLucky_Purple");
-		BlockLucky_Blue = new BlockLucky(Material.wood, "BlockLucky_Blue");
-		BlockLucky_Brown = new BlockLucky(Material.wood, "BlockLucky_Brown");
-		BlockLucky_Black = new BlockLucky(Material.wood, "BlockLucky_Black");
+		BlockLucky = new BlockLucky(Material.wood, "BlockLucky", "yellow");
+		BlockLucky_Red = new BlockLucky(Material.wood, "BlockLucky_Red", "red");
+		BlockLucky_Green = new BlockLucky(Material.wood, "BlockLucky_Green", "green");
+		BlockLucky_White = new BlockLucky(Material.wood, "BlockLucky_White", "white");
+		BlockLucky_Orange = new BlockLucky(Material.wood, "BlockLucky_Orange", "orange");
+		BlockLucky_Magenta = new BlockLucky(Material.wood, "BlockLucky_Magenta", "magenta");
+		BlockLucky_LightBlue = new BlockLucky(Material.wood, "BlockLucky_LightBlue", "light_blue");
+		BlockLucky_Lime = new BlockLucky(Material.wood, "BlockLucky_Lime", "lime");
+		BlockLucky_Pink = new BlockLucky(Material.wood, "BlockLucky_Pink", "pink");
+		BlockLucky_Grey = new BlockLucky(Material.wood, "BlockLucky_Grey", "grey");
+		BlockLucky_Cyan = new BlockLucky(Material.wood, "BlockLucky_Cyan", "cyan");
+		BlockLucky_Purple = new BlockLucky(Material.wood, "BlockLucky_Purple", "purple");
+		BlockLucky_Blue = new BlockLucky(Material.wood, "BlockLucky_Blue", "blue");
+		BlockLucky_Brown = new BlockLucky(Material.wood, "BlockLucky_Brown", "brown");
+		BlockLucky_Black = new BlockLucky(Material.wood, "BlockLucky_Black", "black");
 
 		if(Main.isLuckyBlockInstalled == true) {
-			BlockLucky_Red_2 = new BlockLucky_2(Material.wood, "BlockLucky_Red_2");
-			BlockLucky_Green_2 = new BlockLucky_2(Material.wood, "BlockLucky_Green_2");
-			BlockLucky_White_2 = new BlockLucky_2(Material.wood, "BlockLucky_White_2");
-			BlockLucky_Orange_2 = new BlockLucky_2(Material.wood, "BlockLucky_Orange_2");
-			BlockLucky_Magenta_2 = new BlockLucky_2(Material.wood, "BlockLucky_Magenta_2");
-			BlockLucky_LightBlue_2 = new BlockLucky_2(Material.wood, "BlockLucky_LightBlue_2");
-			BlockLucky_Lime_2 = new BlockLucky_2(Material.wood, "BlockLucky_Lime_2");
-			BlockLucky_Pink_2 = new BlockLucky_2(Material.wood, "BlockLucky_Pink_2");
-			BlockLucky_Grey_2 = new BlockLucky_2(Material.wood, "BlockLucky_Grey_2");
-			BlockLucky_Cyan_2 = new BlockLucky_2(Material.wood, "BlockLucky_Cyan_2");
-			BlockLucky_Purple_2 = new BlockLucky_2(Material.wood, "BlockLucky_Purple_2");
-			BlockLucky_Blue_2 = new BlockLucky_2(Material.wood, "BlockLucky_Blue_2");
-			BlockLucky_Brown_2 = new BlockLucky_2(Material.wood, "BlockLucky_Brown_2");
-			BlockLucky_Black_2 = new BlockLucky_2(Material.wood, "BlockLucky_Black_2");
+			BlockLucky_Red_2 = new BlockLucky_2(Material.wood, "BlockLucky_Red_2", "red");
+			BlockLucky_Green_2 = new BlockLucky_2(Material.wood, "BlockLucky_Green_2", "green");
+			BlockLucky_White_2 = new BlockLucky_2(Material.wood, "BlockLucky_White_2", "white");
+			BlockLucky_Orange_2 = new BlockLucky_2(Material.wood, "BlockLucky_Orange_2", "orange");
+			BlockLucky_Magenta_2 = new BlockLucky_2(Material.wood, "BlockLucky_Magenta_2", "magenta");
+			BlockLucky_LightBlue_2 = new BlockLucky_2(Material.wood, "BlockLucky_LightBlue_2", "light_blue");
+			BlockLucky_Lime_2 = new BlockLucky_2(Material.wood, "BlockLucky_Lime_2", "lime");
+			BlockLucky_Pink_2 = new BlockLucky_2(Material.wood, "BlockLucky_Pink_2", "pink");
+			BlockLucky_Grey_2 = new BlockLucky_2(Material.wood, "BlockLucky_Grey_2", "grey");
+			BlockLucky_Cyan_2 = new BlockLucky_2(Material.wood, "BlockLucky_Cyan_2", "cyan");
+			BlockLucky_Purple_2 = new BlockLucky_2(Material.wood, "BlockLucky_Purple_2", "purple");
+			BlockLucky_Blue_2 = new BlockLucky_2(Material.wood, "BlockLucky_Blue_2", "blue");
+			BlockLucky_Brown_2 = new BlockLucky_2(Material.wood, "BlockLucky_Brown_2", "brown");
+			BlockLucky_Black_2 = new BlockLucky_2(Material.wood, "BlockLucky_Black_2", "black");
 		}
 		registerBlocks();
 	}

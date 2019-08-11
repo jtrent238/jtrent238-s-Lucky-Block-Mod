@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.jtrent238.luckyblock.Main;
-import com.jtrent238.luckyblocks.util.LuckyDropAlgorithm;
+import com.jtrent238.luckyblock.util.LuckyDropAlgorithm;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -37,7 +37,7 @@ public class BlockLucky extends Block {
 	ArrayList<ItemStack> drops = new ArrayList<ItemStack>();
 	
 	
-	public BlockLucky(Material material, String blockName) {
+	public BlockLucky(Material material, String blockName, String blockColor) {
 		super(material);
 		this.setCreativeTab(Main.tab_LuckyBlock);
 		this.setBlockTextureName(Main.MODID + ":" + blockName);
