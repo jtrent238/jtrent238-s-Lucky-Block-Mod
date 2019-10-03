@@ -1,5 +1,6 @@
 package com.jtrent238.luckyblock.proxy;
 
+import com.jtrent238.luckyblock.EntityLoader;
 import com.jtrent238.luckyblock.Main;
 
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -13,8 +14,8 @@ public class CommonProxy {
 	private String owner;
 
 	public void init(FMLInitializationEvent e) {
-	    
-		}
+		
+	}
 	
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event)

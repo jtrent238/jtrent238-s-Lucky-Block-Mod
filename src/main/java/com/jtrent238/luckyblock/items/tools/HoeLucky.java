@@ -10,6 +10,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 
@@ -17,11 +18,11 @@ public class HoeLucky extends ItemHoe {
 
 	private String itemName = "HoeLucky";
 
-	public HoeLucky(ToolMaterial material) {
+	public HoeLucky(ToolMaterial material, String color) {
 		super(material);
 		this.setCreativeTab(Main.tab_LuckyBlock);
-		this.setUnlocalizedName(itemName );
-		this.setTextureName(Main.MODID + ":" + itemName);
+		this.setUnlocalizedName(itemName + "." + color);
+		this.setTextureName(Main.MODID + ":" + itemName + "." + color);
 	}
 
 	@Override

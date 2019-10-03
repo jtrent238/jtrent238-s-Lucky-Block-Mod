@@ -19,17 +19,20 @@ public class ArmorLucky extends ItemArmor{
 	private int armorType;
 	
 
-	public ArmorLucky(ArmorMaterial diamond, int i, int j) {
+	public ArmorLucky(ArmorMaterial diamond, int i, int j, String color) {
 		super(diamond, 0, i);
 	    //this.textureName = textureName;
-	    this.setUnlocalizedName("Lucky_Armor");
-	    this.setTextureName(Main.MODID + ":Lucky_Armor_");
+				
+			this.setUnlocalizedName("Lucky_Armor");
+		    this.setTextureName(Main.MODID + ":Lucky_Armor_");
+	    
 	}
 
 
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
 	{
+			
 		return Main.MODID + ":textures/armor/Lucky_Armor_" + (this.armorType == 2 ? "2" : "1") + ".png";
 		}
 	

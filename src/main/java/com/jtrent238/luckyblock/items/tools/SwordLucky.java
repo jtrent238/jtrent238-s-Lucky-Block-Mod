@@ -17,11 +17,11 @@ public class SwordLucky extends ItemSword {
 
 	private String itemName = "SwordLucky";
 	
-	public SwordLucky(ToolMaterial material) {
+	public SwordLucky(ToolMaterial material, String color) {
 		super(material);
 		this.setCreativeTab(Main.tab_LuckyBlock);
-		this.setUnlocalizedName(itemName);
-		this.setTextureName(Main.MODID + ":" + itemName);
+		this.setUnlocalizedName(itemName + "." + color);
+		this.setTextureName(Main.MODID + ":" + itemName + "." + color);
 	}
 	
 	@Override

@@ -1,3 +1,6 @@
+indev-1.0.1.4
+- Added Tools and Armor for each color Lucky Block
+
 1.0.1.3
 - Added Living lucky blocks for all colors
 - Added Lucky Fragments
