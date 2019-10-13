@@ -309,10 +309,10 @@ public class ItemLoader {
 		LeggingsLucky = new ArmorLucky(armorMaterial_Lucky, 2, 2, "yellow").setUnlocalizedName("LeggingsLucky").setTextureName(Main.MODID + ":LeggingsLucky").setCreativeTab(Main.tab_LuckyBlock);
 		BootsLucky = new ArmorLucky(armorMaterial_Lucky, 3, 3, "yellow").setUnlocalizedName("BootsLucky").setTextureName(Main.MODID + ":BootsLucky").setCreativeTab(Main.tab_LuckyBlock);
 
-		HelmentLucky_Red = new ArmorLucky(armorMaterial_Lucky, 0, 0, "yellow").setUnlocalizedName("HelmentLucky_Red").setTextureName(Main.MODID + ":HelmentLucky_Red").setCreativeTab(Main.tab_LuckyBlock);
-		ChestplateLucky_Red = new ArmorLucky(armorMaterial_Lucky, 1, 1, "yellow").setUnlocalizedName("ChestplateLucky_Red").setTextureName(Main.MODID + ":ChestplateLucky_Red").setCreativeTab(Main.tab_LuckyBlock);
-		LeggingsLucky_Red = new ArmorLucky(armorMaterial_Lucky, 2, 2, "yellow").setUnlocalizedName("LeggingsLucky_Red").setTextureName(Main.MODID + ":LeggingsLucky_Red").setCreativeTab(Main.tab_LuckyBlock);
-		BootsLucky_Red = new ArmorLucky(armorMaterial_Lucky, 3, 3, "yellow").setUnlocalizedName("BootsLucky_Red").setTextureName(Main.MODID + ":BootsLucky_Red").setCreativeTab(Main.tab_LuckyBlock);
+		HelmentLucky_Red = new ArmorLucky(armorMaterial_Lucky, 0, 0, "red").setUnlocalizedName("HelmentLucky_Red").setTextureName(Main.MODID + ":HelmentLucky_Red").setCreativeTab(Main.tab_LuckyBlock);
+		ChestplateLucky_Red = new ArmorLucky(armorMaterial_Lucky, 1, 1, "red").setUnlocalizedName("ChestplateLucky_Red").setTextureName(Main.MODID + ":ChestplateLucky_Red").setCreativeTab(Main.tab_LuckyBlock);
+		LeggingsLucky_Red = new ArmorLucky(armorMaterial_Lucky, 2, 2, "red").setUnlocalizedName("LeggingsLucky_Red").setTextureName(Main.MODID + ":LeggingsLucky_Red").setCreativeTab(Main.tab_LuckyBlock);
+		BootsLucky_Red = new ArmorLucky(armorMaterial_Lucky, 3, 3, "red").setUnlocalizedName("BootsLucky_Red").setTextureName(Main.MODID + ":BootsLucky_Red").setCreativeTab(Main.tab_LuckyBlock);
 
 		HelmentLucky_White = new ArmorLucky(armorMaterial_Lucky, 0, 0, "yellow").setUnlocalizedName("HelmentLucky_White").setTextureName(Main.MODID + ":HelmentLucky_White").setCreativeTab(Main.tab_LuckyBlock);
 		ChestplateLucky_White = new ArmorLucky(armorMaterial_Lucky, 1, 1, "yellow").setUnlocalizedName("ChestplateLucky_White").setTextureName(Main.MODID + ":ChestplateLucky_White").setCreativeTab(Main.tab_LuckyBlock);
@@ -434,7 +434,6 @@ public class ItemLoader {
 		GameRegistry.registerItem(PickLucky_Brown, PickLucky_Brown.getUnlocalizedName().substring(5));       
 		GameRegistry.registerItem(PickLucky_Blue, PickLucky_Blue.getUnlocalizedName().substring(5));        
 		GameRegistry.registerItem(PickLucky_Black, PickLucky_Black.getUnlocalizedName().substring(5));       
-		GameRegistry.registerItem(PickLucky_Purple, PickLucky_Purple.getUnlocalizedName().substring(5));      
 
 		GameRegistry.registerItem(ShovelLucky, ShovelLucky.getUnlocalizedName().substring(5));           
 		GameRegistry.registerItem(ShovelLucky_Red, ShovelLucky_Red.getUnlocalizedName().substring(5));       
@@ -451,7 +450,6 @@ public class ItemLoader {
 		GameRegistry.registerItem(ShovelLucky_Brown, ShovelLucky_Brown.getUnlocalizedName().substring(5));     
 		GameRegistry.registerItem(ShovelLucky_Blue, ShovelLucky_Blue.getUnlocalizedName().substring(5));      
 		GameRegistry.registerItem(ShovelLucky_Black, ShovelLucky_Black.getUnlocalizedName().substring(5));     
-		GameRegistry.registerItem(ShovelLucky_Purple, ShovelLucky_Purple.getUnlocalizedName().substring(5));    
 
 		GameRegistry.registerItem(AxeLucky, AxeLucky.getUnlocalizedName().substring(5));              
 		GameRegistry.registerItem(AxeLucky_Red, AxeLucky_Red.getUnlocalizedName().substring(5));          
@@ -468,7 +466,6 @@ public class ItemLoader {
 		GameRegistry.registerItem(AxeLucky_Brown, AxeLucky_Brown.getUnlocalizedName().substring(5));        
 		GameRegistry.registerItem(AxeLucky_Blue, AxeLucky_Blue.getUnlocalizedName().substring(5));         
 		GameRegistry.registerItem(AxeLucky_Black, AxeLucky_Black.getUnlocalizedName().substring(5));        
-		GameRegistry.registerItem(AxeLucky_Purple, AxeLucky_Purple.getUnlocalizedName().substring(5));       
 
 		GameRegistry.registerItem(HoeLucky, HoeLucky.getUnlocalizedName().substring(5));              
 		GameRegistry.registerItem(HoeLucky_Red, HoeLucky_Red.getUnlocalizedName().substring(5));          
@@ -485,7 +482,6 @@ public class ItemLoader {
 		GameRegistry.registerItem(HoeLucky_Brown, HoeLucky_Brown.getUnlocalizedName().substring(5));        
 		GameRegistry.registerItem(HoeLucky_Blue, HoeLucky_Blue.getUnlocalizedName().substring(5));         
 		GameRegistry.registerItem(HoeLucky_Black, HoeLucky_Black.getUnlocalizedName().substring(5));        
-		GameRegistry.registerItem(HoeLucky_Purple, HoeLucky_Purple.getUnlocalizedName().substring(5));       
 
 		GameRegistry.registerItem(MultiLucky, MultiLucky.getUnlocalizedName().substring(5));            
 		GameRegistry.registerItem(MultiLucky_Red, MultiLucky_Red.getUnlocalizedName().substring(5));        
@@ -518,7 +514,6 @@ public class ItemLoader {
 		GameRegistry.registerItem(HelmentLucky_Brown, HelmentLucky_Brown.getUnlocalizedName().substring(5));       
 		GameRegistry.registerItem(HelmentLucky_Blue, HelmentLucky_Blue.getUnlocalizedName().substring(5));        
 		GameRegistry.registerItem(HelmentLucky_Black, HelmentLucky_Black.getUnlocalizedName().substring(5));       
-		GameRegistry.registerItem(HelmentLucky_Purple, HelmentLucky_Purple.getUnlocalizedName().substring(5));      
 
 		GameRegistry.registerItem(ChestplateLucky, ChestplateLucky.getUnlocalizedName().substring(5));           
 		GameRegistry.registerItem(ChestplateLucky_Red, ChestplateLucky_Red.getUnlocalizedName().substring(5));       
@@ -535,7 +530,6 @@ public class ItemLoader {
 		GameRegistry.registerItem(ChestplateLucky_Brown, ChestplateLucky_Brown.getUnlocalizedName().substring(5));     
 		GameRegistry.registerItem(ChestplateLucky_Blue, ChestplateLucky_Blue.getUnlocalizedName().substring(5));      
 		GameRegistry.registerItem(ChestplateLucky_Black, ChestplateLucky_Black.getUnlocalizedName().substring(5));     
-		GameRegistry.registerItem(ChestplateLucky_Purple, ChestplateLucky_Purple.getUnlocalizedName().substring(5));    
 
 		GameRegistry.registerItem(LeggingsLucky, LeggingsLucky.getUnlocalizedName().substring(5));              
 		GameRegistry.registerItem(LeggingsLucky_Red, LeggingsLucky_Red.getUnlocalizedName().substring(5));          
@@ -552,7 +546,6 @@ public class ItemLoader {
 		GameRegistry.registerItem(LeggingsLucky_Brown, LeggingsLucky_Brown.getUnlocalizedName().substring(5));        
 		GameRegistry.registerItem(LeggingsLucky_Blue, LeggingsLucky_Blue.getUnlocalizedName().substring(5));         
 		GameRegistry.registerItem(LeggingsLucky_Black, LeggingsLucky_Black.getUnlocalizedName().substring(5));        
-		GameRegistry.registerItem(LeggingsLucky_Purple, LeggingsLucky_Purple.getUnlocalizedName().substring(5));       
 
 		GameRegistry.registerItem(BootsLucky, BootsLucky.getUnlocalizedName().substring(5));              
 		GameRegistry.registerItem(BootsLucky_Red, BootsLucky_Red.getUnlocalizedName().substring(5));          
@@ -569,7 +562,6 @@ public class ItemLoader {
 		GameRegistry.registerItem(BootsLucky_Brown, BootsLucky_Brown.getUnlocalizedName().substring(5));        
 		GameRegistry.registerItem(BootsLucky_Blue, BootsLucky_Blue.getUnlocalizedName().substring(5));         
 		GameRegistry.registerItem(BootsLucky_Black, BootsLucky_Black.getUnlocalizedName().substring(5));        
-		GameRegistry.registerItem(BootsLucky_Purple, BootsLucky_Purple.getUnlocalizedName().substring(5));    
 		
 		GameRegistry.registerItem(ShardLucky, ShardLucky.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(ShardLucky_Red, ShardLucky_Red.getUnlocalizedName().substring(5));
