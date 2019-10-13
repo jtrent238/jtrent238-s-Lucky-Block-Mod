@@ -2,6 +2,7 @@ package com.jtrent238.luckyblock.items.tools;
 
 import java.util.List;
 
+import com.jtrent238.luckyblock.ItemLoader;
 import com.jtrent238.luckyblock.Main;
 
 import cpw.mods.fml.relauncher.Side;
@@ -12,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
+import net.minecraftforge.event.entity.player.PlayerDestroyItemEvent;
 
 public class SwordLucky extends ItemSword {
 
@@ -31,4 +33,5 @@ public class SwordLucky extends ItemSword {
 		list.add(EnumChatFormatting.YELLOW + StatCollector.translateToLocal("tooltip.tools.crafted"));
 
 	}
+	
 }

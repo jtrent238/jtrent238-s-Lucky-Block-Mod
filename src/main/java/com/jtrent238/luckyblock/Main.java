@@ -45,7 +45,7 @@ public class Main
     
 	public static ModContainer myModContainer;
 	
-	public static final String MODVERSION = "indev-1.0.1.4";
+	public static final String MODVERSION = "1.0.2.3";
 	public static final String MODNAME = "jtrent238's Lucky Block Mod";
 	public static final String MODAUTHOR = "jtrent238";
 	public static final String MC = "1.7.10";

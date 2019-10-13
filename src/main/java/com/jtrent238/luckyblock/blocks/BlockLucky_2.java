@@ -93,7 +93,7 @@ public class BlockLucky_2 extends BlockContainer {
     }
     
     public void doDrop(final mod.lucky.drop.LuckyDrop[] v16, final World v15, final EntityPlayer v14, final Random v13, final int v12, final int v11, final int v10) {
-        try {
+    	try {
             /*SL:152*/this.spawnEntity.setRandom(v13);
             /*SL:155*/for (int n = 0; v16[n] != null; /*SL:240*/++n) {
                 final mod.lucky.drop.LuckyDrop luckyDrop = v16[n];
