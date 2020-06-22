@@ -1,8 +1,11 @@
 package com.jtrent238.luckyblock;
 
 
+import java.util.Random;
+
 import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock;
 import com.jtrent238.luckyblock.proxy.CommonProxy;
+import com.jtrent238.luckyblock.structures.LuckyStructure;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -25,6 +28,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.world.World;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 
@@ -45,7 +49,7 @@ public class Main
     
 	public static ModContainer myModContainer;
 	
-	public static final String MODVERSION = "1.0.2.3";
+	public static final String MODVERSION = "indev-1.0.2.3";
 	public static final String MODNAME = "jtrent238's Lucky Block Mod";
 	public static final String MODAUTHOR = "jtrent238";
 	public static final String MC = "1.7.10";
@@ -149,7 +153,6 @@ public void postInit(FMLPostInitializationEvent event) {
 		
 	    Recipes.registerRecpies();
 
-	   
 	}
 	
 	

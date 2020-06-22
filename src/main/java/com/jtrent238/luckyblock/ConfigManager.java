@@ -34,6 +34,7 @@ public class ConfigManager {
 	public static int LIVING_LUCKY_ID_PURPLE;
 	public static int LIVING_LUCKY_ID_RED;
 	public static int LIVING_LUCKY_ID_WHITE;
+	public static boolean ENABLE_DEVLOGGING;
 
 
 	public static void Manage(FMLPreInitializationEvent event) {
@@ -57,6 +58,7 @@ public class ConfigManager {
 		ENABLE_LOOT = config.get(CATEGORY_GENERAL, "enableLoot", true).getBoolean(false);
 		LUCKY_MULTIPLIER = config.getInt("luckyMultiplier", CATEGORY_GENERAL, 100, 1, 65535, "How strong are the tools, weapons, and armor. (Diamond * LUCKY_MULTIPLIER)");
 		LUCKY_TRADER_ID = config.getInt("luckyTraderID", CATEGORY_GENERAL, 29626, 60, 30000, "");
+		
 		
 		
 //		LIVING_LUCKY_ID = config.getInt("EntityLivingLuckyBlock", CATEGORY_ENTITY_IDS, 29451, minEntityID, maxEntityID, "");
