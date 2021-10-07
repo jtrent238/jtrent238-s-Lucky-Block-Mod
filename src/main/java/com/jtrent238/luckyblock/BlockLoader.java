@@ -23,7 +23,6 @@ public class BlockLoader {
 	public static Block BlockLucky_Purple;
 	public static Block BlockLucky_Blue;
 	public static Block BlockLucky_Brown;
-	public static Block BlockLucky_red;
 	public static Block BlockLucky_Black;
 	
 	public static Block BlockLucky_Red_2;
@@ -39,7 +38,6 @@ public class BlockLoader {
 	public static Block BlockLucky_Purple_2;
 	public static Block BlockLucky_Blue_2;
 	public static Block BlockLucky_Brown_2;
-	public static Block BlockLucky_red_2;
 	public static Block BlockLucky_Black_2;
 	
 	/**

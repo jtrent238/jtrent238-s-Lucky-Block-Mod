@@ -1,47 +1,26 @@
 package com.jtrent238.luckyblock.blocks;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import com.jtrent238.luckyblock.ConfigManager;
 import com.jtrent238.luckyblock.Main;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Black;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Blue;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Brown;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Cyan;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Green;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Grey;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_LightBlue;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Lime;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Magenta;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Orange;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Pink;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Purple;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_Red;
-import com.jtrent238.luckyblock.entity.EntityLivingLuckyBlock_White;
+import com.jtrent238.luckyblock.entity.group.EntityGroupHorde;
+import com.jtrent238.luckyblock.structures.DiamondPoleStructure;
+import com.jtrent238.luckyblock.structures.LuckyStructure;
 import com.jtrent238.luckyblock.structures.traps.DoorTrap_Iron;
 import com.jtrent238.luckyblock.structures.traps.DoorTrap_Wood;
 import com.jtrent238.luckyblock.structures.traps.GoodLuckTrap;
-import com.jtrent238.luckyblock.util.LuckyDropAlgorithm;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityWither;
+import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
@@ -143,7 +122,6 @@ public class BlockLucky extends Block {
     	EntityWither witherEntity = new EntityWither(world); 
     	EntityCreeper creeperEntity = new EntityCreeper(world); 
     	EntityCow cowEntity = new EntityCow(world);
-    	
     	
     	
     	
@@ -349,268 +327,12 @@ public class BlockLucky extends Block {
     		break;
     		
         	
-    	case 10: 
+    	case 10:
     		droptype ="living_luckyblock_horde";
     		
         	player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.RED + "" + EnumChatFormatting.BOLD + "L" + EnumChatFormatting.GOLD + EnumChatFormatting.BOLD + "U" + EnumChatFormatting.YELLOW + "" + EnumChatFormatting.BOLD + "C" + EnumChatFormatting.GREEN + "" + EnumChatFormatting.BOLD + "K" + EnumChatFormatting.BLUE + "" + EnumChatFormatting.BOLD + "Y" + " " + EnumChatFormatting.LIGHT_PURPLE + "" + EnumChatFormatting.BOLD + "B" + EnumChatFormatting.AQUA + "" + EnumChatFormatting.BOLD + "L" + EnumChatFormatting.DARK_GREEN + "" + EnumChatFormatting.BOLD + "O" + EnumChatFormatting.WHITE + "" + EnumChatFormatting.BOLD + "C" + EnumChatFormatting.BLUE + "" + EnumChatFormatting.BOLD + "S" + EnumChatFormatting.GREEN + "" + EnumChatFormatting.BOLD + "!" ));
 
-        	int luckyColorPickerMin = 0;
-        	int luckyColorPickerMax = 14;
-        	
-        	int luckyPosmin = 5;
-    		int luckyPosmax = 25;
-    		
-    		for (int rl = 0; rl < 25; rl++) {
-	        	int luckyColorPicker = rand.nextInt((luckyColorPickerMax - luckyColorPickerMin) + 1) + luckyColorPickerMin;
-	        	
-	        	
-	        	switch (luckyColorPicker) {
-	        	
-	        	case 0:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock livingLuckyBlock = new EntityLivingLuckyBlock(world);
-
-			        	livingLuckyBlock.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlock);
-	            	}
-	            	
-	        		break;
-	        		
-	        	case 1:
-	        		
-	     		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_Red livingLuckyBlockRed = new EntityLivingLuckyBlock_Red(world);
-
-			        	livingLuckyBlockRed.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockRed);
-	            	}
-	            	
-	        		break;
-	        		
-	        	case 2:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_Green livingLuckyBlockGreen = new EntityLivingLuckyBlock_Green(world);
-
-			        	livingLuckyBlockGreen.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockGreen);
-	            	}
-	            	
-	        		break;
-	        		
-	        	case 3:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_White livingLuckyBlockWhite = new EntityLivingLuckyBlock_White(world);
-
-			        	livingLuckyBlockWhite.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockWhite);
-	            	}
-	            	
-	        		break;
-	        		
-	        	case 4:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_Orange livingLuckyBlockOrange = new EntityLivingLuckyBlock_Orange(world);
-
-			        	livingLuckyBlockOrange.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockOrange);
-	            	}
-	            	
-	        		break;
-	        		
-	        	case 5:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_Magenta livingLuckyBlockMagenta = new EntityLivingLuckyBlock_Magenta(world);
-
-			        	livingLuckyBlockMagenta.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockMagenta);
-	            	}
-	            	
-	        		break;
-	        		
-	        	case 6:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_LightBlue livingLuckyBlockLightBlue = new EntityLivingLuckyBlock_LightBlue(world);
-
-			        	livingLuckyBlockLightBlue.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockLightBlue);
-	            	}
-	            	
-	        		break;
-	        		
-	        	case 7:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_Lime livingLuckyBlockLime = new EntityLivingLuckyBlock_Lime(world);
-
-			        	livingLuckyBlockLime.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockLime);
-	            	}
-	            	
-	        		break;
-	        		
-	        	case 8:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_Pink livingLuckyBlockPink = new EntityLivingLuckyBlock_Pink(world);
-
-			        	livingLuckyBlockPink.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockPink);
-	            	}
-	            	
-	        		break;
-	        		
-	        	case 9:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_Grey livingLuckyBlockGrey = new EntityLivingLuckyBlock_Grey(world);
-
-			        	livingLuckyBlockGrey.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockGrey);
-	            	}
-	            	
-	        		break;
-	        		
-				case 10:
-					
-					
-					for (int l = 0; l < 5; l++) {
-				
-						int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-						int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-						
-			        	EntityLivingLuckyBlock_Cyan livingLuckyBlockCyan = new EntityLivingLuckyBlock_Cyan(world);
-
-				    	livingLuckyBlockCyan.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-						       world.spawnEntityInWorld(livingLuckyBlockCyan);
-					}
-					
-					break;
-						
-				case 11:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_Purple livingLuckyBlockPurple = new EntityLivingLuckyBlock_Purple(world);
-
-			        	livingLuckyBlockPurple.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockPurple);
-	            	}
-	            	
-	        		break;
-	        		
-				case 12:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_Blue livingLuckyBlockBlue = new EntityLivingLuckyBlock_Blue(world);
-
-			        	livingLuckyBlockBlue.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockBlue);
-	            	}
-	            	
-	        		break;
-	        		
-				case 13:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_Brown livingLuckyBlockBrown = new EntityLivingLuckyBlock_Brown(world);
-
-			        	livingLuckyBlockBrown.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockBrown);
-	            	}
-	            	
-	        		break;
-	        		
-				case 14:
-	        		
-	        		
-	            	for (int l = 0; l < 5; l++) {
-	
-		        		int randPosX = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		int randPosY = rand.nextInt((luckyPosmax - luckyPosmin) + 1) + luckyPosmin;
-		        		
-			        	EntityLivingLuckyBlock_Black livingLuckyBlockBlack = new EntityLivingLuckyBlock_Black(world);
-
-			        	livingLuckyBlockBlack.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-			 		       world.spawnEntityInWorld(livingLuckyBlockBlack);
-	            	}
-	            	
-	        		break;
-	        		
-	        	default:
-	        		break;
-	        	}
-    		}
-    		
+    		EntityGroupHorde.LuckyHorde.spawnHorde(world, player);
     		
     		if(ConfigManager.ENABLE_DEVLOGGING == true) {
     			System.out.println("Case , " + dropID + droptype);
@@ -647,9 +369,27 @@ public class BlockLucky extends Block {
     		}
     		
     		break;
-    		
-    		
-    	default: 
+
+		case 12:
+			droptype ="lucky_structure";
+
+			LuckyStructure.placeStructure(world, player);
+
+			if(ConfigManager.ENABLE_DEVLOGGING == true) {
+				System.out.println("Case , " + dropID + droptype);
+			}
+			break;
+
+		case 13:
+			droptype ="diamond_pole";
+
+			DiamondPoleStructure.placeStructure(world, player);
+
+			if(ConfigManager.ENABLE_DEVLOGGING == true) {
+				System.out.println("Case , " + dropID + droptype);
+			}
+			break;
+    	default:
         	droptype = "Invalid Drop";
         	
         	if(ConfigManager.ENABLE_DEVLOGGING == true) {

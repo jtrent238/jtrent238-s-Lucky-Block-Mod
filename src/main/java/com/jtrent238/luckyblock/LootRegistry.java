@@ -36,7 +36,7 @@ public class LootRegistry {
 				loot.add(new ItemStack(BlockLoader.BlockLucky_Orange));
 				loot.add(new ItemStack(BlockLoader.BlockLucky_Pink));
 				loot.add(new ItemStack(BlockLoader.BlockLucky_Purple));
-				loot.add(new ItemStack(BlockLoader.BlockLucky_red));
+				loot.add(new ItemStack(BlockLoader.BlockLucky_Red));
 				loot.add(new ItemStack(BlockLoader.BlockLucky_White));
 			}
 			
@@ -53,7 +53,7 @@ public class LootRegistry {
 				loot.add(new ItemStack(BlockLoader.BlockLucky_Orange_2));
 				loot.add(new ItemStack(BlockLoader.BlockLucky_Pink_2));
 				loot.add(new ItemStack(BlockLoader.BlockLucky_Purple_2));
-				loot.add(new ItemStack(BlockLoader.BlockLucky_red_2));
+				loot.add(new ItemStack(BlockLoader.BlockLucky_Red_2));
 				loot.add(new ItemStack(BlockLoader.BlockLucky_White_2));
 			}
 	}

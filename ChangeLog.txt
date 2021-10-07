@@ -1,3 +1,6 @@
+indev-1.0.2.3
+- Added more drops to lucky blocks
+
 1.0.2.3
 - Added Tools and Armor for each color Lucky Block
 
