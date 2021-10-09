@@ -2,7 +2,7 @@ package com.jtrent238.luckyblock;
 
 import com.jtrent238.luckyblock.blocks.BlockLucky;
 import com.jtrent238.luckyblock.blocks.BlockLucky_2;
-import cpw.mods.fml.common.Loader;
+import com.jtrent238.luckyblock.blocks.BlockLuckyOre;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -39,7 +39,22 @@ public class BlockLoader {
 	public static Block BlockLucky_Blue_2;
 	public static Block BlockLucky_Brown_2;
 	public static Block BlockLucky_Black_2;
-	
+
+	public static Block BlockLuckyOre;
+	public static Block BlockLuckyOre_Red;
+	public static Block BlockLuckyOre_Green;
+	public static Block BlockLuckyOre_White;
+	public static Block BlockLuckyOre_Orange;
+	public static Block BlockLuckyOre_Magenta;
+	public static Block BlockLuckyOre_LightBlue;
+	public static Block BlockLuckyOre_Lime;
+	public static Block BlockLuckyOre_Pink;
+	public static Block BlockLuckyOre_Grey;
+	public static Block BlockLuckyOre_Cyan;
+	public static Block BlockLuckyOre_Purple;
+	public static Block BlockLuckyOre_Blue;
+	public static Block BlockLuckyOre_Brown;
+	public static Block BlockLuckyOre_Black;
 	/**
 	 * Load Blocks.
 	 */
@@ -60,6 +75,22 @@ public class BlockLoader {
 		BlockLucky_Blue = new BlockLucky(Material.wood, "BlockLucky_Blue", "blue");
 		BlockLucky_Brown = new BlockLucky(Material.wood, "BlockLucky_Brown", "brown");
 		BlockLucky_Black = new BlockLucky(Material.wood, "BlockLucky_Black", "black");
+
+		BlockLuckyOre = new BlockLuckyOre(Material.wood, "BlockLuckyOre", "yellow");
+		BlockLuckyOre_Red = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Red", "red");
+		BlockLuckyOre_Green = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Green", "green");
+		BlockLuckyOre_White = new BlockLuckyOre(Material.wood, "BlockLuckyOre_White", "white");
+		BlockLuckyOre_Orange = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Orange", "orange");
+		BlockLuckyOre_Magenta = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Magenta", "magenta");
+		BlockLuckyOre_LightBlue = new BlockLuckyOre(Material.wood, "BlockLuckyOre_LightBlue", "light_blue");
+		BlockLuckyOre_Lime = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Lime", "lime");
+		BlockLuckyOre_Pink = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Pink", "pink");
+		BlockLuckyOre_Grey = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Grey", "grey");
+		BlockLuckyOre_Cyan = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Cyan", "cyan");
+		BlockLuckyOre_Purple = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Purple", "purple");
+		BlockLuckyOre_Blue = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Blue", "blue");
+		BlockLuckyOre_Brown = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Brown", "brown");
+		BlockLuckyOre_Black = new BlockLuckyOre(Material.wood, "BlockLuckyOre_Black", "black");
 
 		if(Main.isLuckyBlockInstalled == true) {
 			BlockLucky_Red_2 = new BlockLucky_2(Material.wood, "BlockLucky_Red_2", "red");
@@ -84,8 +115,24 @@ public class BlockLoader {
 		 * Register Blocks.
 		 */
 		private static void registerBlocks() {
-			
-			// If the lucky block mod is not installed use our blocks
+
+			GameRegistry.registerBlock(BlockLuckyOre, "BlockLuckyOre");
+			GameRegistry.registerBlock(BlockLuckyOre_Red, "BlockLuckyOre_Red");
+			GameRegistry.registerBlock(BlockLuckyOre_Green, "BlockLuckyOre_Green");
+			GameRegistry.registerBlock(BlockLuckyOre_White, "BlockLuckyOre_White");
+			GameRegistry.registerBlock(BlockLuckyOre_Orange, "BlockLuckyOre_Orange");
+			GameRegistry.registerBlock(BlockLuckyOre_Magenta, "BlockLuckyOre_Magenta");
+			GameRegistry.registerBlock(BlockLuckyOre_LightBlue, "BlockLuckyOre_LightBlue");
+			GameRegistry.registerBlock(BlockLuckyOre_Lime, "BlockLuckyOre_Lime");
+			GameRegistry.registerBlock(BlockLuckyOre_Pink, "BlockLuckyOre_Pink");
+			GameRegistry.registerBlock(BlockLuckyOre_Grey, "BlockLuckyOre_Grey");
+			GameRegistry.registerBlock(BlockLuckyOre_Cyan, "BlockLuckyOre_Cyan");
+			GameRegistry.registerBlock(BlockLuckyOre_Purple, "BlockLuckyOre_Purple");
+			GameRegistry.registerBlock(BlockLuckyOre_Blue, "BlockLuckyOre_Blue");
+			GameRegistry.registerBlock(BlockLuckyOre_Brown, "BlockLuckyOre_Brown");
+			GameRegistry.registerBlock(BlockLuckyOre_Black, "BlockLuckyOre_Black");
+
+
 			if(Main.isLuckyBlockInstalled == true) {
 				
 				GameRegistry.registerBlock(BlockLucky_Red_2, "BlockLucky_Red_2");
@@ -103,8 +150,9 @@ public class BlockLoader {
 				GameRegistry.registerBlock(BlockLucky_Brown_2, "BlockLucky_Brown_2");
 				GameRegistry.registerBlock(BlockLucky_Black_2, "BlockLucky_Black_2");
 				
-			} 
-			
+			}
+
+			// If the lucky block mod is not installed use our blocks
 			if(Main.isLuckyBlockInstalled == false || Main.LuckyOveride == true) {
 				
 

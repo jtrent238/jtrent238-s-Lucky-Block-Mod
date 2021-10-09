@@ -8,6 +8,7 @@ import com.jtrent238.luckyblock.items.tools.MultiLucky;
 import com.jtrent238.luckyblock.items.tools.PickLucky;
 import com.jtrent238.luckyblock.items.tools.ShovelLucky;
 import com.jtrent238.luckyblock.items.tools.SwordLucky;
+import com.jtrent238.luckyblock.items.ItemOrbLucky;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
@@ -192,7 +193,23 @@ public class ItemLoader {
 	public static ItemShardLucky ShardLucky_Brown;
 	public static ItemShardLucky ShardLucky_Blue;
 	public static ItemShardLucky ShardLucky_Black;
-	
+
+	public static ItemOrbLucky OrbLucky;
+	public static ItemOrbLucky OrbLucky_Red;
+	public static ItemOrbLucky OrbLucky_White;
+	public static ItemOrbLucky OrbLucky_Purple;
+	public static ItemOrbLucky OrbLucky_Pink;
+	public static ItemOrbLucky OrbLucky_Orange;
+	public static ItemOrbLucky OrbLucky_Magenta;
+	public static ItemOrbLucky OrbLucky_Lime;
+	public static ItemOrbLucky OrbLucky_LightBlue;
+	public static ItemOrbLucky OrbLucky_Grey;
+	public static ItemOrbLucky OrbLucky_Green;
+	public static ItemOrbLucky OrbLucky_Cyan;
+	public static ItemOrbLucky OrbLucky_Brown;
+	public static ItemOrbLucky OrbLucky_Blue;
+	public static ItemOrbLucky OrbLucky_Black;
+
 	private static int LUCKY_MULTIPLIER = ConfigManager.LUCKY_MULTIPLIER;
 	
 	public static ToolMaterial toolMaterial_Lucky = EnumHelper.addToolMaterial("toolMaterial_Lucky", 3 * LUCKY_MULTIPLIER, 1561 * LUCKY_MULTIPLIER, 8.0F * LUCKY_MULTIPLIER, 3.0F * LUCKY_MULTIPLIER, 10 * LUCKY_MULTIPLIER);
@@ -394,7 +411,24 @@ public class ItemLoader {
 		ShardLucky_Brown = new ItemShardLucky("ShardLucky_Brown", "brown");
 		ShardLucky_Blue = new ItemShardLucky("ShardLucky_Blue", "blue");
 		ShardLucky_Black = new ItemShardLucky("ShardLucky_Black", "black");
-		
+
+		OrbLucky = new ItemOrbLucky("OrbLucky", "yellow");
+		OrbLucky_Red = new ItemOrbLucky("OrbLucky_Red", "red");
+		OrbLucky_White = new ItemOrbLucky("OrbLucky_White", "white");
+		OrbLucky_Purple = new ItemOrbLucky("OrbLucky_Purple", "purple");
+		OrbLucky_Pink = new ItemOrbLucky("OrbLucky_Pink", "pink");
+		OrbLucky_Orange = new ItemOrbLucky("OrbLucky_Orange", "orange");
+		OrbLucky_Magenta = new ItemOrbLucky("OrbLucky_Magenta", "magenta");
+		OrbLucky_Lime = new ItemOrbLucky("OrbLucky_Lime", "lime");
+		OrbLucky_LightBlue = new ItemOrbLucky("OrbLucky_LightBlue", "light_blue");
+		OrbLucky_Grey = new ItemOrbLucky("OrbLucky_Grey", "grey");
+		OrbLucky_Green = new ItemOrbLucky("OrbLucky_Green", "green");
+		OrbLucky_Cyan = new ItemOrbLucky("OrbLucky_Cyan", "cyan");
+		OrbLucky_Brown = new ItemOrbLucky("OrbLucky_Brown", "brown");
+		OrbLucky_Blue = new ItemOrbLucky("OrbLucky_Blue", "blue");
+		OrbLucky_Black = new ItemOrbLucky("OrbLucky_Black", "black");
+
+
 		registerItems();
 	}
 
@@ -578,6 +612,22 @@ public class ItemLoader {
 		GameRegistry.registerItem(ShardLucky_Brown, ShardLucky_Brown.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(ShardLucky_Blue, ShardLucky_Blue.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(ShardLucky_Black, ShardLucky_Black.getUnlocalizedName().substring(5));
+
+		GameRegistry.registerItem(OrbLucky, OrbLucky.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Red, OrbLucky_Red.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_White, OrbLucky_White.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Purple, OrbLucky_Purple.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Pink, OrbLucky_Pink.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Orange, OrbLucky_Orange.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Magenta, OrbLucky_Magenta.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Lime, OrbLucky_Lime.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_LightBlue, OrbLucky_LightBlue.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Grey, OrbLucky_Grey.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Green, OrbLucky_Green.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Cyan, OrbLucky_Cyan.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Brown, OrbLucky_Brown.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Blue, OrbLucky_Blue.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrbLucky_Black, OrbLucky_Black.getUnlocalizedName().substring(5));
 
 	}
 }

@@ -1,12 +1,17 @@
 package com.jtrent238.luckyblock.entity.group;
 
 import com.jtrent238.luckyblock.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.monster.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
 import java.util.Random;
 
 public class EntityGroupHorde {
+
+    private static Random rand = new Random();
+
     public static class LuckyHorde {
 
         private static Random rand = new Random();
@@ -272,5 +277,142 @@ public class EntityGroupHorde {
             }
         }
 
+    }
+
+    public static class ZombieHorde {
+
+        public static void spawnHorde(World world, EntityPlayer player) {
+            EntityZombie theEntity = new EntityZombie(world);
+                for (int z = 0; z < 25; z++) {
+
+                    int min = 5;
+                    int max = 25;
+                    int randPosX = rand.nextInt((max - min) + 1) + min;
+                    int randPosY = rand.nextInt((max - min) + 1) + min;
+
+                    theEntity.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear
+                    world.spawnEntityInWorld(theEntity);
+        }
+    }
+
+}
+
+    public static class SkeletonHorde {
+
+        public static void spawnHorde(World world, EntityPlayer player) {
+
+            EntitySkeleton theEntity = new EntitySkeleton(world);
+
+            for (int z = 0; z < 25; z++) {
+
+                int min = 5;
+                int max = 25;
+                int randPosX = rand.nextInt((max - min) + 1) + min;
+                int randPosY = rand.nextInt((max - min) + 1) + min;
+
+                theEntity.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear
+                world.spawnEntityInWorld(theEntity);
+            }
+        }
+
+    }
+
+    public static class SlimeHorde {
+
+        public static void spawnHorde(World world, EntityPlayer player) {
+
+            EntitySlime theEntity = new EntitySlime(world);
+
+            for (int z = 0; z < 25; z++) {
+
+                int min = 5;
+                int max = 25;
+                int randPosX = rand.nextInt((max - min) + 1) + min;
+                int randPosY = rand.nextInt((max - min) + 1) + min;
+
+                theEntity.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear
+                world.spawnEntityInWorld(theEntity);
+            }
+        }
+
+    }
+
+    public static class BlazeHorde {
+
+        public static void spawnHorde(World world, EntityPlayer player) {
+
+            EntityBlaze theEntity = new EntityBlaze(world);
+
+            for (int z = 0; z < 25; z++) {
+
+                int min = 5;
+                int max = 25;
+                int randPosX = rand.nextInt((max - min) + 1) + min;
+                int randPosY = rand.nextInt((max - min) + 1) + min;
+
+                theEntity.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear
+                world.spawnEntityInWorld(theEntity);
+            }
+        }
+
+    }
+
+    public static class SpiderHorde {
+
+        public static void spawnHorde(World world, EntityPlayer player) {
+
+            EntitySpider theEntity = new EntitySpider(world);
+
+            for (int z = 0; z < 25; z++) {
+
+                int min = 5;
+                int max = 25;
+                int randPosX = rand.nextInt((max - min) + 1) + min;
+                int randPosY = rand.nextInt((max - min) + 1) + min;
+
+                theEntity.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear
+                world.spawnEntityInWorld(theEntity);
+            }
+        }
+
+    }
+
+    public static class CaveSpiderHorde {
+
+        public static void spawnHorde(World world, EntityPlayer player) {
+
+            EntityCaveSpider theEntity = new EntityCaveSpider(world);
+
+            for (int z = 0; z < 25; z++) {
+
+                int min = 5;
+                int max = 25;
+                int randPosX = rand.nextInt((max - min) + 1) + min;
+                int randPosY = rand.nextInt((max - min) + 1) + min;
+
+                theEntity.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear
+                world.spawnEntityInWorld(theEntity);
+            }
+        }
+
+    }
+
+    public static class CreeperHorde {
+
+        public static void spawnHorde(World world, EntityPlayer player) {
+
+            EntityCreeper theEntity = new EntityCreeper(world);
+            for (int h = 0; h < 25; h++) {
+
+                int min = 5;
+                int max = 25;
+                int randPosX = rand.nextInt((max - min) + 1) + min;
+                int randPosY = rand.nextInt((max - min) + 1) + min;
+
+
+                theEntity.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear
+                world.spawnEntityInWorld(theEntity);
+            }
+        }
     }
 }

@@ -4,18 +4,19 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import com.jtrent238.luckyblock.ConfigManager;
+import com.jtrent238.luckyblock.ItemLoader;
 import com.jtrent238.luckyblock.Main;
 import com.jtrent238.luckyblock.entity.group.EntityGroupHorde;
+import com.jtrent238.luckyblock.items.ItemOrbLucky;
 import com.jtrent238.luckyblock.structures.DiamondPoleStructure;
+import com.jtrent238.luckyblock.structures.LuckyCube_3x3_Structure;
 import com.jtrent238.luckyblock.structures.LuckyStructure;
-import com.jtrent238.luckyblock.structures.traps.DoorTrap_Iron;
-import com.jtrent238.luckyblock.structures.traps.DoorTrap_Wood;
 import com.jtrent238.luckyblock.structures.traps.GoodLuckTrap;
 
+import com.jtrent238.luckyblock.structures.traps.TntTrap;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.boss.EntityWither;
-import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityCow;
@@ -52,6 +53,7 @@ public class BlockLucky extends Block {
 		this.setBlockTextureName(Main.MODID + ":" + blockName);
 		this.setBlockName(blockName);
 		this.setHardness(0.5F);
+		this.drop = new ItemOrbLucky(blockName, blockColor);
 	}
 
 	public boolean enableStats(){
@@ -62,23 +64,23 @@ public class BlockLucky extends Block {
 	/*
 	 * @Override public Item getItemDropped(int metadata, Random random, int
 	 * fortune) { return this.drop; //ItemLoader.itemBirthdayPresent; }
-	 * 
+	 *
 	 * @Override public int damageDropped(int metadata) { return this.meta; }
-	 * 
+	 *
 	 * @Override public int quantityDropped(int meta, int fortune, Random random) {
 	 * if (this.least_quantity >= this.most_quantity) return this.least_quantity;
 	 * return this.least_quantity + random.nextInt(this.most_quantity -
 	 * this.least_quantity + fortune + 1); }
-	 * 
+	 *
 	 * public void LuckyDrops( Item drop, int meta, int least_quantity, int
 	 * most_quantity){ this.drop = drop; this.meta = meta; this.least_quantity =
 	 * least_quantity; this.most_quantity = most_quantity; }
-	 * 
+	 *
 	 * @Override public ArrayList<ItemStack> getDrops(World world, int x, int y, int
 	 * z, int metadata, int fortune) {
-	 * 
+	 *
 	 * int tatapatt = (int) 1;
-	 * 
+	 *
 	 * drops.add(new ItemStack(Items.gold_nugget, (int) tatapatt)); drops.add(new
 	 * ItemStack(Items.coal, (int) tatapatt)); drops.add(new
 	 * ItemStack(Items.iron_ingot, (int) tatapatt)); drops.add(new
@@ -88,23 +90,23 @@ public class BlockLucky extends Block {
 	 * (int) tatapatt < 0.5F) drops.add(new ItemStack(Items.diamond)); if
 	 * (world.rand.nextFloat() / (int) tatapatt < 0.3F) drops.add(new
 	 * ItemStack(Items.golden_apple));
-	 * 
+	 *
 	 * get_drops_as_string = drops.toString();
-	 * 
+	 *
 	 * return drops; }
-	 * 
+	 *
 	 * private void addCustomDrops(World world) throws IOException { File
 	 * custom_drops = new File("custom_drops.txt"); custom_drops.createNewFile();
 	 * //Create the file if it don't already exist
-	 * 
+	 *
 	 * List<String> CustomDrops = new ArrayList<String>(); BufferedReader reader =
 	 * new BufferedReader(new FileReader("custom_drops.txt")); String line;
-	 * 
+	 *
 	 * while ((line = reader.readLine()) != null) { CustomDrops.add(line);
 	 * drops.add(new ItemStack(Blocks.air, world.rand.nextInt(4) + 1)); }
-	 * 
+	 *
 	 * reader.close();
-	 * 
+	 *
 	 * }
 	 */
 	
@@ -115,21 +117,15 @@ public class BlockLucky extends Block {
     public void harvestBlock(World world, EntityPlayer player, int p_149636_3_, int p_149636_4_, int p_149636_5_, int p_149636_6_)
     {
     	//int luckValue = 0;
-    	
-    	
-    	
-    	EntityZombie zombieEntity = new EntityZombie(world); 
-    	EntityWither witherEntity = new EntityWither(world); 
-    	EntityCreeper creeperEntity = new EntityCreeper(world); 
+
+    	EntityWither witherEntity = new EntityWither(world);
     	EntityCow cowEntity = new EntityCow(world);
-    	
-    	
     	
     	Random rand = new Random();
     	int  n = rand.nextInt(1) + 0;
 
     	int minDropID = 0;
-    	int maxDropID = 11;
+    	int maxDropID = 20;
         int dropID = rand.nextInt((maxDropID - minDropID) + 1) + minDropID;
 
         
@@ -234,20 +230,9 @@ public class BlockLucky extends Block {
     		
         	player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.RED + "" + EnumChatFormatting.BOLD + "I hear creepers"));
 
-        	for (int h = 0; h < 25; h++) {
-        		
-        		int min = 5;
-        		int max = 25;
-        		int randPosX = rand.nextInt((max - min) + 1) + min;
-        		int randPosY = rand.nextInt((max - min) + 1) + min;
-        		
-	        	
-	        	creeperEntity.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-	 		       world.spawnEntityInWorld(creeperEntity);
-        	}
-        	
-    		
-    		if(ConfigManager.ENABLE_DEVLOGGING == true) {
+			EntityGroupHorde.CreeperHorde.spawnHorde(world, player);
+
+			if(ConfigManager.ENABLE_DEVLOGGING == true) {
     			System.out.println("Case , " + dropID + droptype);
     		}
     		break;
@@ -257,17 +242,7 @@ public class BlockLucky extends Block {
     		
         	player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.RED + "" + EnumChatFormatting.BOLD + "BRAINZ!!!"));
 
-        	for (int z = 0; z < 25; z++) {
-        		
-        		int min = 5;
-        		int max = 25;
-        		int randPosX = rand.nextInt((max - min) + 1) + min;
-        		int randPosY = rand.nextInt((max - min) + 1) + min;
-        		
-	        	zombieEntity.setPosition(player.posX + randPosX, player.posY + 5, player.posZ + randPosY); //These are the coordinates where he will appear 
-	 		       world.spawnEntityInWorld(zombieEntity);
-        	}
-        	
+			EntityGroupHorde.ZombieHorde.spawnHorde(world, player);
     		
     		if(ConfigManager.ENABLE_DEVLOGGING == true) {
     			System.out.println("Case , " + dropID + droptype);
@@ -330,7 +305,7 @@ public class BlockLucky extends Block {
     	case 10:
     		droptype ="living_luckyblock_horde";
     		
-        	player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.RED + "" + EnumChatFormatting.BOLD + "L" + EnumChatFormatting.GOLD + EnumChatFormatting.BOLD + "U" + EnumChatFormatting.YELLOW + "" + EnumChatFormatting.BOLD + "C" + EnumChatFormatting.GREEN + "" + EnumChatFormatting.BOLD + "K" + EnumChatFormatting.BLUE + "" + EnumChatFormatting.BOLD + "Y" + " " + EnumChatFormatting.LIGHT_PURPLE + "" + EnumChatFormatting.BOLD + "B" + EnumChatFormatting.AQUA + "" + EnumChatFormatting.BOLD + "L" + EnumChatFormatting.DARK_GREEN + "" + EnumChatFormatting.BOLD + "O" + EnumChatFormatting.WHITE + "" + EnumChatFormatting.BOLD + "C" + EnumChatFormatting.BLUE + "" + EnumChatFormatting.BOLD + "S" + EnumChatFormatting.GREEN + "" + EnumChatFormatting.BOLD + "!" ));
+        	player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.RED + "" + EnumChatFormatting.BOLD + "L" + EnumChatFormatting.GOLD + EnumChatFormatting.BOLD + "U" + EnumChatFormatting.YELLOW + "" + EnumChatFormatting.BOLD + "C" + EnumChatFormatting.GREEN + "" + EnumChatFormatting.BOLD + "K" + EnumChatFormatting.BLUE + "" + EnumChatFormatting.BOLD + "Y" + " " + EnumChatFormatting.LIGHT_PURPLE + "" + EnumChatFormatting.BOLD + "B" + EnumChatFormatting.AQUA + "" + EnumChatFormatting.BOLD + "L" + EnumChatFormatting.DARK_GREEN + "" + EnumChatFormatting.BOLD + "O" + EnumChatFormatting.WHITE + "" + EnumChatFormatting.BOLD + "C" + EnumChatFormatting.RED + ""+ EnumChatFormatting.BOLD + "K" + EnumChatFormatting.BLUE + "" + EnumChatFormatting.BOLD + "S" + EnumChatFormatting.GREEN + "" + EnumChatFormatting.BOLD + "!" ));
 
     		EntityGroupHorde.LuckyHorde.spawnHorde(world, player);
     		
@@ -389,6 +364,78 @@ public class BlockLucky extends Block {
 				System.out.println("Case , " + dropID + droptype);
 			}
 			break;
+
+		case 14:
+			droptype ="skeleton_horde";
+
+			EntityGroupHorde.SkeletonHorde.spawnHorde(world, player);
+
+			if(ConfigManager.ENABLE_DEVLOGGING == true) {
+				System.out.println("Case , " + dropID + droptype);
+			}
+			break;
+
+		case 15:
+			droptype ="slime_horde";
+
+			EntityGroupHorde.SlimeHorde.spawnHorde(world, player);
+
+			if(ConfigManager.ENABLE_DEVLOGGING == true) {
+				System.out.println("Case , " + dropID + droptype);
+			}
+			break;
+		case 16:
+			droptype ="blaze_horde";
+
+			EntityGroupHorde.BlazeHorde.spawnHorde(world, player);
+
+			if(ConfigManager.ENABLE_DEVLOGGING == true) {
+				System.out.println("Case , " + dropID + droptype);
+			}
+			break;
+		case 17:
+			droptype ="spider_horde";
+
+			EntityGroupHorde.SpiderHorde.spawnHorde(world, player);
+
+			if(ConfigManager.ENABLE_DEVLOGGING == true) {
+				System.out.println("Case , " + dropID + droptype);
+			}
+			break;
+		case 18:
+			droptype ="cave_spider_horde";
+
+			EntityGroupHorde.CaveSpiderHorde.spawnHorde(world, player);
+
+			if(ConfigManager.ENABLE_DEVLOGGING == true) {
+				System.out.println("Case , " + dropID + droptype);
+			}
+			break;
+		case 19:
+
+			droptype = "tnt_trap_0";
+
+			player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.RED + "" + EnumChatFormatting.BOLD + "GG!"));
+
+			TntTrap.createTrap(world, player);
+
+			if(ConfigManager.ENABLE_DEVLOGGING == true) {
+				System.out.println("Case , " + dropID + droptype);
+			}
+
+			break;
+		case 20:
+
+			droptype = "luckycube_3x3_structure";
+
+			LuckyCube_3x3_Structure.placeStructure(world, player);
+
+			if(ConfigManager.ENABLE_DEVLOGGING == true) {
+				System.out.println("Case , " + dropID + droptype);
+			}
+
+			break;
+
     	default:
         	droptype = "Invalid Drop";
         	

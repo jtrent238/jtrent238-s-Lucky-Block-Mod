@@ -1,5 +1,10 @@
 indev-1.0.2.3
 - Added more drops to lucky blocks
+- Added Luckyblock Ore for each color Lucky Block
+- Added Lucky Orb for each color Lucky Block
+- Fixed item name for green lucky boots
+- Fixed item name for grey lucky boots
+- Fixed item name for red lucky hoe
 
 1.0.2.3
 - Added Tools and Armor for each color Lucky Block

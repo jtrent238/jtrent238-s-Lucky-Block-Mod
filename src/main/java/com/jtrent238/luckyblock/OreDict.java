@@ -28,5 +28,21 @@ public class OreDict {
         replacements.put(new ItemStack(ItemLoader.ShardLucky_Brown), "shardLucky");
         replacements.put(new ItemStack(ItemLoader.ShardLucky_Blue), "shardLucky");
         replacements.put(new ItemStack(ItemLoader.ShardLucky_Black), "shardLucky");
+
+        replacements.put(new ItemStack(ItemLoader.OrbLucky), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Red), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_White), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Purple), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Pink), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Orange), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Magenta), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Lime), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_LightBlue), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Grey), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Green), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Cyan), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Brown), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Blue), "orbLucky");
+        replacements.put(new ItemStack(ItemLoader.OrbLucky_Black), "orbLucky");
 	}
 }
